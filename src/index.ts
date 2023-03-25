@@ -1,15 +1,22 @@
-import {readFile} from "./utils/filesystem";
-import { read } from 'xlsx';
+import {consoleInput} from './utils/console';
+
+import {read10KFormat} from './utils/10k';
+import {writeFile} from "./utils/filesystem";
+import config from "./config";
 
 
+const main = async () => {
+  console.log('10-K exporter')
 
-const main = async (path: string) => {
-    const buffer = await readFile(path)
-    const document = read(buffer);
-    console.log(document['Sheets']['Consolidated Balance Sheets']['B3'])
-    console.log(Object.keys(document))
+  const ticker = await consoleInput('Enter a ticker: ')
+  const year = '2022'
+
+
+  const data10k = await read10KFormat(ticker, year)
+  const formattedString = JSON.stringify(data10k, null, 2)
+  writeFile(`${config.formattedDataDir}/${ticker}.json`, formattedString)
 }
 
 
+main()
 
-main('./data/raw/Financial_report.xlsx')
