@@ -10,7 +10,6 @@ const main = async () => {
   console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
   const ticker = config.ticker || await consoleInput('Enter a ticker: ')
   const operation = config.operation || await getOperation()
-
   switch (operation) {
     case 'parse': await extractTickers10k(ticker); break;
     case 'export': await exportDataFromJson(ticker); break;

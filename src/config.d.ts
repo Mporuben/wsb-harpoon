@@ -1,8 +1,7 @@
 export interface Config {
   ticker?: string;
   operation?: 'parse' | 'export'
-  rawDataDir: string;
-  formattedDataDir: string;
+  rootDir: string;
   balanceSheet: string
   incomeStatement: string;
 }

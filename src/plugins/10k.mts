@@ -20,7 +20,7 @@ export const extractTickers10k = async (ticker: string): Promise<void> => {
 }
 
 export const readTickers10ks = async (ticker): Promise<Formated10K> => {
-  const pattern =`${config.rawDataDir}/${ticker}/10k_*.xlsx`
+  const pattern =`${config.rootDir}/raw/${ticker}/10k_*.xlsx`
   console.log(`Searching for pattern: ${chalk.yellow(pattern)}`)
   const files= await glob(pattern, {})
   let data10ks: Formated10K = {}
@@ -44,7 +44,7 @@ export const read10kFileAndFormat = async (fileName: string): Promise<Formated10
 
 const write10kExport = async (ticker: string, data: Formated10K): Promise<void> => {
   await writeFile(
-    `${config.formattedDataDir}/${ticker}.json`,
+    `${config.rootDir}/internal/${ticker}.json`,
     JSON.stringify(data, null, 2)
   )
 }
