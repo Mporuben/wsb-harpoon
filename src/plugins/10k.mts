@@ -3,7 +3,7 @@ import {merge} from 'lodash-es';
 import {glob} from 'glob';
 import chalk from 'chalk';
 
-import {readFile, writeFile} from "../utils/system/filesystem.mjs";
+import fs from "fs/promises";
 import {formatRawJSON} from "../utils/formatting.mjs";
 import config from "../config.mjs";
 import {Formated10K} from "./10k";
@@ -19,7 +19,7 @@ export const extractTickers10k = async (ticker: string): Promise<void> => {
   }
 }
 
-export const readTickers10ks = async (ticker): Promise<Formated10K> => {
+export const readTickers10ks = async (ticker: string): Promise<Formated10K> => {
   const pattern =`${config.rootDir}/raw/${ticker}/10k_*.xlsx`
   console.log(`Searching for pattern: ${chalk.yellow(pattern)}`)
   const files= await glob(pattern, {})
@@ -32,7 +32,7 @@ export const readTickers10ks = async (ticker): Promise<Formated10K> => {
 }
 
 export const read10kFileAndFormat = async (fileName: string): Promise<Formated10K> => {
-  const buffer = await readFile(fileName)
+  const buffer = await fs.readFile(fileName)
   const sheets = read(buffer)['Sheets']
   console.log(`${chalk.bgGreen('Parsed')} ${chalk.blue(fileName)}`)
   return {
@@ -43,7 +43,7 @@ export const read10kFileAndFormat = async (fileName: string): Promise<Formated10
 
 
 const write10kExport = async (ticker: string, data: Formated10K): Promise<void> => {
-  await writeFile(
+  await fs.writeFile(
     `${config.rootDir}/internal/${ticker}.json`,
     JSON.stringify(data, null, 2)
   )

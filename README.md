@@ -2,6 +2,11 @@
 
 
 ## Data folder structure
+
+- data - root folder
+- raw - folder with raw reports
+- internal - folder for storing parsed internal data
+- exported - folder with exported reports
 ```
 /data
 ├── /raw

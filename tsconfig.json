@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "bin",
+    "strict": true,
     "types": [
       "node"
     ]

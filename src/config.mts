@@ -1,5 +1,4 @@
-import {Config} from './config.d'
-import chalk from "chalk";
+import {Config, Operation} from './config.d'
 
 
 export const config: Config = {
@@ -11,11 +10,10 @@ export const config: Config = {
 }
 
 
-function validateOperation(operation)  {
+function validateOperation(operation: string | undefined): Operation | undefined {
   if(operation == 'parse' || operation == 'export') {
     return operation
   }
-  console.error(chalk.red('Invalid operation. Use --operation=parse or --operation=export'));
   return undefined
 }
 

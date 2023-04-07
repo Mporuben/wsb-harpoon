@@ -3,3 +3,7 @@ export interface NormalizedItem {
     [field: string]: number
   }
 }
+
+export interface RawItem {
+  [name: string]: string | number
+}

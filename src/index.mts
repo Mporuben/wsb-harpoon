@@ -1,10 +1,10 @@
-import chalk from "chalk";
+import chalk from 'chalk';
 
 import {consoleInput} from './utils/system/console.mjs';
 import {extractTickers10k} from './plugins/10k.mjs';
 import config from './config.mjs';
 import {exportDataFromJson} from './plugins/export.mjs'
-
+import {OperationMap} from './index.d'
 
 const main = async () => {
   console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
@@ -17,7 +17,7 @@ const main = async () => {
 }
 
 const getOperation = async (): Promise<string> => {
-  const map = {'1': 'parse', '2': 'export'}
+  const map: OperationMap = {'1': 'parse', '2': 'export'}
 
   Object.keys(map).reduce((acc, key) =>
     acc + `${key}. ${map[key]}\n`,

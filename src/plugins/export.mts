@@ -1,10 +1,10 @@
 import config from "../config.mjs";
 import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
-import {FormattedItem} from './export.d';
+import {FormattedItem, ProcessingItem} from './export.d';
 import chalk from "chalk";
 
-export const  exportDataFromJson = async (ticker): Promise<void> => {
+export const  exportDataFromJson = async (ticker: string): Promise<void> => {
   try {
     const filePath = `${config.rootDir}/internal/${ticker}.json`
     let data
@@ -14,6 +14,7 @@ export const  exportDataFromJson = async (ticker): Promise<void> => {
     } catch (e) {
       throw new Error(`Could not find file ${filePath}`)
     }
+    // @ts-ignore
     const tickerContent = JSON.parse(data)
     const formattedData = formatDateForWorkSheet(tickerContent.balanceSheet)
 
@@ -30,7 +31,7 @@ export const  exportDataFromJson = async (ticker): Promise<void> => {
   }
 }
 
-const writeSheet = async (ticker, workSheet) => {
+const writeSheet = async (ticker: string, workSheet: WorkSheet): Promise<void> => {
   try {
     const workbook: WorkBook = utils.book_new();
     utils.book_append_sheet(workbook, workSheet, "balanceSheet");
@@ -45,7 +46,7 @@ const writeSheet = async (ticker, workSheet) => {
 
 const formatDateForWorkSheet = (tickerContent: any): FormattedItem[] => {
   const years: string[] = Object.keys(tickerContent)
-  const items  = {}
+  const items: ProcessingItem  = {}
   years.forEach((year: string) => {
     Object.keys(tickerContent[year]).forEach((item: string) => {
       if (!items[item]) {
@@ -56,4 +57,6 @@ const formatDateForWorkSheet = (tickerContent: any): FormattedItem[] => {
   })
   return Object.keys(items).map((itemName) => ({ item: itemName, ...items[itemName]}))
 }
+
+
 
