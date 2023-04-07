@@ -13,7 +13,7 @@ const main = async () => {
     await extractTickers10k(ticker)
     console.log('\n✅ Parsing complete!')
   } else if(config.operation === 'export') {
-    exportDataFromJson(ticker)
+    await exportDataFromJson(ticker)
     console.log('\n✅ Export complete!')
   }
 }

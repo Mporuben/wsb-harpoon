@@ -10,7 +10,7 @@ npm run start
 npm run build
 ```
 
-# Build and rund
+# Development
 ```bash
 npm run dev
 ```
