@@ -2,10 +2,13 @@ import {merge} from 'lodash-es'
 import {NormalizedItem, RawItem} from './formatting.d'
 
 export const formatRawJSON = (json: any, multiplyNum = 1000000): NormalizedItem =>
-  json.reduce((acc: NormalizedItem, item: RawItem) =>{
-    return merge(acc, normalizeItem(item, multiplyNum)), {}
-  }
-)
+  json.reduce(
+    (acc: NormalizedItem, item: RawItem) => {
+      return merge(acc, normalizeItem(item, multiplyNum))
+    },
+    {}
+  )
+
 
 const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
   const field: string = getFieldName(item)
@@ -15,7 +18,7 @@ const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
       if(!acc[date.getFullYear()]) {
         acc[date.getFullYear()] = {}
       }
-      if(typeof item[key] !== 'number') {
+      if(typeof item[key] === 'number') {
         acc[date.getFullYear()] = { [field]: multiplyNum * (item[key] as number)}
       }
     }

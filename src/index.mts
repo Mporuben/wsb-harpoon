@@ -8,7 +8,7 @@ import {OperationMap} from './index.d'
 
 const main = async () => {
   console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
-  const ticker = config.ticker || await consoleInput('Enter a ticker: ')
+  const ticker = config.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
   const operation = config.operation || await getOperation()
   switch (operation) {
     case 'parse': await extractTickers10k(ticker); break;
@@ -19,11 +19,11 @@ const main = async () => {
 const getOperation = async (): Promise<string> => {
   const map: OperationMap = {'1': 'parse', '2': 'export'}
 
-  Object.keys(map).reduce((acc, key) =>
-    acc + `${key}. ${map[key]}\n`,
+  const optionsString = Object.keys(map).reduce((acc, key) =>
+    acc + chalk.cyan(`  ${key}. ${map[key]}\n`),
     ''
   )
-  return map[await consoleInput('Enter operations: \n 1. parse \n 2. export \n')]
+  return map[await consoleInput(chalk.yellow(`Enter operations:\n${optionsString}`))]
 }
 
 

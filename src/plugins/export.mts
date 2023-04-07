@@ -10,7 +10,6 @@ export const  exportDataFromJson = async (ticker: string): Promise<void> => {
     let data
     try {
       data = await fs.readFile(filePath)
-      console.log(filePath, data)
     } catch (e) {
       throw new Error(`Could not find file ${filePath}`)
     }
