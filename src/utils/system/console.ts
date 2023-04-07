@@ -7,7 +7,6 @@ export const consoleInput = (message: string): Promise<string> => new Promise((r
     output: process.stdout,
   });
 
-
   readlineInterface.question(message, (input: string) => {
     resolve(input);
     readlineInterface.close();

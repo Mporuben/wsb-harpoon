@@ -1,20 +1,15 @@
-import {consoleInput} from './utils/console';
+import {consoleInput} from './utils/system/console';
+import {extractTickers10k} from './utils/10k';
 
-import {read10KFormat} from './utils/10k';
-import {writeFile} from "./utils/filesystem";
 import config from "./config";
 
 
 const main = async () => {
-  console.log('10-K exporter')
+  console.log('⚡ Fin statement parser')
+  const ticker = config.ticker || await consoleInput('Enter a ticker: ')
+  await extractTickers10k(ticker)
 
-  const ticker = await consoleInput('Enter a ticker: ')
-  const year = '2022'
-
-
-  const data10k = await read10KFormat(ticker, year)
-  const formattedString = JSON.stringify(data10k, null, 2)
-  writeFile(`${config.formattedDataDir}/${ticker}.json`, formattedString)
+  console.log('✅ Parsing complete!')
 }
 
 

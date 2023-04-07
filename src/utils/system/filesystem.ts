@@ -1,4 +1,5 @@
-import fs from "fs";
+import fs from 'fs';
+import {glob} from 'glob';
 
 export const readFile = (path: string) => new Promise((resolve, reject) => {
   fs.readFile(path, (err, buffer) => {
@@ -17,3 +18,4 @@ export const writeFile = (path: string, content: string) => new Promise((resolve
     return resolve(undefined)
   })
 })
+

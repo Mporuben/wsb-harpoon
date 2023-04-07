@@ -1,4 +1,4 @@
-# 10-k Extractor
+# Fin statement parser
 
 # Run cli tool
 ```bash
