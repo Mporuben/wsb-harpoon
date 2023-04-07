@@ -1,15 +1,13 @@
-import lodash from 'lodash'
+import {merge} from 'lodash-es'
 import { NormalizedItem } from './formatting.d'
-import {Formated10K} from './10k.d'
 
 export const formatRawJSON = (json: any, multiplyNum = 1000000): NormalizedItem =>
   json.reduce((acc: NormalizedItem, item) =>
-    lodash.merge(acc, normalizeItem(item, multiplyNum)), {})
+    merge(acc, normalizeItem(item, multiplyNum)), {})
 
-const normalizeItem = (item, multiplyNum: number): Formated10K  => {
+const normalizeItem = (item, multiplyNum: number): NormalizedItem  => {
   const field: string = getFieldName(item)
-
-  return Object.keys(item).reduce((acc: Formated10K, key) => {
+  return Object.keys(item).reduce((acc: NormalizedItem, key) => {
     const date = new Date(key)
     if (!isNaN(date.getTime())) {
       if(!acc[date.getFullYear()]) {

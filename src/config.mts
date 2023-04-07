@@ -1,10 +1,11 @@
-import {Config} from './config.d';
+import {Config} from './config.d'
 
 export const config: Config = {
   rawDataDir: './data/raw',
   formattedDataDir: './data/formatted',
+  ticker: 'gddy',
   balanceSheet: 'Consolidated Balance Sheets',
-  ticker: 'gddy'
+  incomeStatement: 'Consolidated Statements of Operations',
 }
 
 

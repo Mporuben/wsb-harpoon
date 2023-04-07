@@ -1,22 +1,26 @@
 {
   "name": "fin",
+  "type": "module",
   "version": "1.0.0",
-  "description": "Exports data from 10-k filings",
   "main": "./src/index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "npx tsc && node dist/index.js"
+    "start": "node dist/index.mjs",
+    "dev": "npx tsc && node dist/index.mjs"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.192",
+    "chalk": "^5.2.0",
     "glob": "^9.3.4",
-    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.192",
     "@types/node": "^18.15.3",
     "typescript": "^5.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.5.0"
   }
 }

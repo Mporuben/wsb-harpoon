@@ -1,10 +1,11 @@
 import {read, utils} from 'xlsx';
-import lodash from 'lodash';
+import {merge} from 'lodash-es';
 import {glob} from 'glob';
-import {readFile, writeFile} from "./system/filesystem";
-import {formatRawJSON} from "./formatting";
-import config from "../config";
-import {Formated10K} from "./10k.d";
+import {readFile, writeFile} from "./system/filesystem.mjs";
+import {formatRawJSON} from "./formatting.mjs";
+import config from "../config.mjs";
+import {Formated10K} from "./10k";
+import chalk from 'chalk';
 
 
 export const extractTickers10k = async (ticker: string): Promise<void> => {
@@ -20,7 +21,7 @@ export const readTickers10ks = async (ticker): Promise<Formated10K> => {
   const files= await glob(`${config.rawDataDir}/${ticker}/10k_*.xlsx`, {})
   let data10ks: Formated10K = {}
   const readPromises = files.map(async (fileName: string)=> {
-      data10ks = lodash.merge(data10ks, await read10kFileAndFormat(fileName))
+      data10ks = merge(data10ks, await read10kFileAndFormat(fileName))
   })
   await Promise.all(readPromises)
   return data10ks
@@ -29,8 +30,13 @@ export const readTickers10ks = async (ticker): Promise<Formated10K> => {
 export const read10kFileAndFormat = async (fileName: string): Promise<Formated10K> => {
   const buffer = await readFile(fileName)
   const sheets = read(buffer)['Sheets']
+
+
+  console.log(chalk.green(`Parsed ${fileName}`))
+
   return {
-    balanceSheet: formatRawJSON(utils.sheet_to_json(sheets[config.balanceSheet]))
+    balanceSheet: formatRawJSON(utils.sheet_to_json(sheets[config.balanceSheet])),
+    // incomeStatement: formatRawJSON(utils.sheet_to_json(sheets[config.incomeStatement]))
   }
 }
 
