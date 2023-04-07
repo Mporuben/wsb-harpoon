@@ -1,16 +1,21 @@
-import {consoleInput} from './utils/system/console.mjs';
-import {extractTickers10k} from './utils/10k.mjs';
+import chalk from "chalk";
 
+import {consoleInput} from './utils/system/console.mjs';
+import {extractTickers10k} from './plugins/10k.mjs';
 import config from './config.mjs';
+import {exportDataFromJson} from './plugins/export.mjs'
 
 
 const main = async () => {
-
-  console.log('\x1b[33m Fin statement parser 💸 📈  \x1b[0m');
-
+  console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
   const ticker = config.ticker || await consoleInput('Enter a ticker: ')
-  await extractTickers10k(ticker)
-  console.log('✅ Parsing complete!')
+  if(config.operation === 'parse') {
+    await extractTickers10k(ticker)
+    console.log('\n✅ Parsing complete!')
+  } else if(config.operation === 'export') {
+    exportDataFromJson(ticker)
+    console.log('\n✅ Export complete!')
+  }
 }
 
 
