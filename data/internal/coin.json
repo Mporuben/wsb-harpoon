@@ -37,10 +37,9 @@
     "2021": {
       "Cash and cash equivalents": 7123478000000,
       "Restricted cash": 30951000000,
-      "Customer custodial funds": 10526233000000,
-      "Customer crypto assets": 0,
+      "Customer custodial funds": 10617552000000,
       "USDC": 100096000000,
-      "Accounts and loans receivable, net of allowance": 396025000000,
+      "Accounts and loans receivable, net of allowance": 304706000000,
       "Income tax receivable": 61231000000,
       "Prepaid expenses and other current assets": 135849000000,
       "Total current assets": 18373863000000,
@@ -51,10 +50,9 @@
       "Intangible assets, net": 176689000000,
       "Other non-current assets": 952307000000,
       "Total assets": 21274425000000,
-      "Customer custodial cash liabilities": 10480612000000,
-      "Customer crypto liabilities": 0,
+      "Custodial funds due to customers": 10480612000000,
       "Accounts payable": 39833000000,
-      "Accrued expenses and other current liabilities": 439559000000,
+      "Accrued expenses": 439559000000,
       "Crypto asset borrowings": 426665000000,
       "Lease liabilities, current": 32366000000,
       "Total current liabilities": 11419035000000,
@@ -62,16 +60,18 @@
       "Long-term debt": 3384795000000,
       "Other non-current liabilities": 14828000000,
       "Total liabilities": 14892736000000,
+      "Convertible preferred stock, $0.00001 par value; 500,000 and 126,605 shares authorized at December 31, 2021 and December 31, 2020, respectively; zero and 112,878 shares issued and outstanding at December 31, 2021 and December 31, 2020, respectively; aggregate liquidation preference of $0 and $578,750 at December 31, 2021 and December 31, 2020, respectively": 0,
       "Additional paid-in capital": 2034658000000,
-      "Accumulated other comprehensive loss": -3395000000,
+      "Accumulated other comprehensive (loss) income": -3395000000,
       "Retained earnings": 4350424000000,
       "Total stockholders’ equity": 6381689000000,
       "Total liabilities, convertible preferred stock, and stockholders’ equity": 21274425000000,
       "Common stock": 0,
-      "Custodial funds due to customers": 10480612000000,
-      "Accrued expenses": 439559000000,
-      "Convertible preferred stock, $0.00001 par value; 500,000 and 126,605 shares authorized at December 31, 2021 and December 31, 2020, respectively; zero and 112,878 shares issued and outstanding at December 31, 2021 and December 31, 2020, respectively; aggregate liquidation preference of $0 and $578,750 at December 31, 2021 and December 31, 2020, respectively": 0,
-      "Accumulated other comprehensive (loss) income": -3395000000
+      "Customer crypto assets": 0,
+      "Customer custodial cash liabilities": 10480612000000,
+      "Customer crypto liabilities": 0,
+      "Accrued expenses and other current liabilities": 439559000000,
+      "Accumulated other comprehensive loss": -3395000000
     },
     "2022": {
       "Cash and cash equivalents": 4425021000000,
@@ -108,5 +108,6 @@
       "Total liabilities, convertible preferred stock, and stockholders’ equity": 89724873000000,
       "Common stock": 0
     }
-  }
+  },
+  "operationsStatement": {}
 }

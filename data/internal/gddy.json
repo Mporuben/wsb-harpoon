@@ -61,13 +61,13 @@
       "Preferred stock, $0.001 par value - 50,000 shares authorized; none issued and outstanding": 0,
       "Additional paid-in capital": 1594700000,
       "Accumulated deficit": -1474600000,
-      "Accumulated other comprehensive income (loss)": -38600000,
+      "Accumulated other comprehensive loss": -38600000,
       "Total stockholders' equity (deficit) attributable to GoDaddy Inc.": 81700000,
       "Non-controlling interests": 1500000,
       "Total stockholders' equity (deficit)": 83200000,
       "Total liabilities and stockholders' equity (deficit)": 7417100000,
       "Common stock": 0,
-      "Accumulated other comprehensive loss": -38600000
+      "Accumulated other comprehensive income (loss)": -38600000
     },
     "2022": {
       "Cash and cash equivalents": 774000000,
@@ -103,5 +103,6 @@
       "Total liabilities and stockholders' equity (deficit)": 6973500000,
       "Common stock": 0
     }
-  }
+  },
+  "operationsStatement": {}
 }

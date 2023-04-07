@@ -3,7 +3,7 @@ export interface Config {
   operation?: Operation
   rootDir: string;
   balanceSheet: string
-  incomeStatement: string;
+  operationsStatement: string;
 }
 
 

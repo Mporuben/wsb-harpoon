@@ -6,7 +6,7 @@ export const config: Config = {
   operation: validateOperation(process.env.npm_config_operation),
   rootDir: './data',
   balanceSheet: 'Consolidated Balance Sheets',
-  incomeStatement: 'Consolidated Statements of Operations',
+  operationsStatement: 'Consolidated Statements of Oper',
 }
 
 
