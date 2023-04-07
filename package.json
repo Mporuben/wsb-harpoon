@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.mjs",
+    "start": "node bin/index.mjs",
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
