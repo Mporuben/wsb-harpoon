@@ -3,6 +3,7 @@
 
 ## Data folder structure
 
+
 - data - root folder
 - raw - folder with raw reports
 - internal - folder for storing parsed internal data
@@ -20,7 +21,9 @@
 
 ## Run cli tool
 ```bash
-npm run start
+npm run start 
+#command configs
+npm run start --ticker=coin --operation=parse
 ```
 
 ## Build cli tool

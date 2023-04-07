@@ -18,7 +18,6 @@ const main = async () => {
 
 const getOperation = async (): Promise<string> => {
   const map: OperationMap = {'1': 'parse', '2': 'export'}
-
   const optionsString = Object.keys(map).reduce((acc, key) =>
     acc + chalk.cyan(`  ${key}. ${map[key]}\n`),
     ''
