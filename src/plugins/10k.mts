@@ -13,8 +13,9 @@ export const extractTickers10k = async (ticker: string): Promise<void> => {
   try {
     const data10ks = await readTickers10ks(ticker);
     await write10kExport(ticker, data10ks)
+    console.log('\n✅ Parsing complete!')
   } catch (e) {
-    console.log(e)
+    console.error(chalk.red(e))
   }
 }
 
