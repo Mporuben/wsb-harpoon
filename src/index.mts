@@ -9,13 +9,22 @@ import {exportDataFromJson} from './plugins/export.mjs'
 const main = async () => {
   console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
   const ticker = config.ticker || await consoleInput('Enter a ticker: ')
-  if(config.operation === 'parse') {
-    await extractTickers10k(ticker)
-    console.log('\n✅ Parsing complete!')
-  } else if(config.operation === 'export') {
-    await exportDataFromJson(ticker)
-    console.log('\n✅ Export complete!')
+  const operation = config.operation || await getOperation()
+
+  switch (operation) {
+    case 'parse': await extractTickers10k(ticker); break;
+    case 'export': await exportDataFromJson(ticker); break;
   }
+}
+
+const getOperation = async (): Promise<string> => {
+  const map = {'1': 'parse', '2': 'export'}
+
+  Object.keys(map).reduce((acc, key) =>
+    acc + `${key}. ${map[key]}\n`,
+    ''
+  )
+  return map[await consoleInput('Enter operations: \n 1. parse \n 2. export \n')]
 }
 
 
