@@ -1,7 +1,7 @@
 {
   "name": "fin",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "main": "./bin/index.mjs",
   "bin": {
     "fin": "./bin/index.js"

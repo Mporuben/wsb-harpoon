@@ -18,7 +18,7 @@ export const initPlugins = async () => {
 
 const installPlugin = async (fileLocation: string) => {
   try {
-    const plugin: PluginConfig = (await import('../../../' +fileLocation)).default
+    const plugin: PluginConfig = (await import('../../' +fileLocation)).default
     Object.entries(plugin.commands).forEach(([name, command]) => {
       addCommand(name, {origin: plugin.name, ...command})
     })
