@@ -2,9 +2,8 @@ import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
 import {FormattedItem, ProcessingItem} from './index';
 import chalk from "chalk";
-import {PluginConfig} from "../../core/plugin-manager/plugins-manager";
-import {Config} from "../../core/config/config.d";
-import {consoleInput} from "../../core/system/console.mjs";
+import {PluginConfig, Config} from "../../core/core";
+import {consoleInput} from "../../core/system.mjs";
 
 
 
@@ -23,7 +22,7 @@ export default plugin
 
 async function exportDataFromJson(config: Config): Promise<void> {
   try {
-    const ticker = config.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
+    const ticker = config.actionConfig.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
     const filePath = `${config.rootDir}/internal/${ticker}.json`
     let data
     try {

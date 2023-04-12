@@ -6,9 +6,8 @@ import chalk from 'chalk';
 import fs from "fs/promises";
 import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
 import {Formated10K} from "./index";
-import {PluginConfig} from "../../core/plugin-manager/plugins-manager";
-import {consoleInput} from "../../core/system/console.mjs";
-import {Config} from "../../core/config/config.d";
+import {PluginConfig, Config} from "../../core/core";
+import {consoleInput} from "../../core/system.mjs";
 
 
 
@@ -31,7 +30,7 @@ const operationsStatementKey = 'Consolidated Statements of Oper'
 
 async function extractTickers10k(config: Config): Promise<void> {
   try {
-    const ticker = config.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
+    const ticker = config.actionConfig.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
 
     const data10ks = await readTickers10ks(ticker, config);
     await write10kExport(ticker, data10ks, config)

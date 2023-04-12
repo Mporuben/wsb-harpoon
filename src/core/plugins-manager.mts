@@ -1,9 +1,10 @@
 import {glob} from "glob";
-import {addCommand} from "../commands/index.mjs";
-import {PluginConfig} from "./plugins-manager";
+import {addCommand} from "./commands.mjs";
+import {PluginConfig} from "./core";
 import chalk from "chalk";
 
-const pluginsFolder ='bin/plugins/**/index.mjs'
+const pluginsFolder = 'bin/plugins/**/index.mjs'
+
 export const initPlugins = async () => {
   try {
     const plugins =  await glob(pluginsFolder)
@@ -14,7 +15,6 @@ export const initPlugins = async () => {
     console.log(e)
   }
 }
-
 
 const installPlugin = async (fileLocation: string) => {
   try {
