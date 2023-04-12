@@ -1,11 +1,29 @@
-import config from "../../config.mjs";
 import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
-import {FormattedItem, ProcessingItem} from './export.d';
+import {FormattedItem, ProcessingItem} from './index';
 import chalk from "chalk";
+import {PluginConfig} from "../../core/plugin-manager/plugins";
+import {Config} from "../../core/config/config.d";
+import {consoleInput} from "../../core/system/console.mjs";
 
-export const  exportDataFromJson = async (ticker: string): Promise<void> => {
+
+
+const plugin: PluginConfig = {
+  name: 'exportSheet',
+  commands: {
+    export: {
+      description: 'export data to excel sheet',
+      handler: exportDataFromJson,
+    }
+  }
+}
+export default plugin
+
+
+
+async function exportDataFromJson(config: Config): Promise<void> {
   try {
+    const ticker = config.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
     const filePath = `${config.rootDir}/internal/${ticker}.json`
     let data
     try {
@@ -23,14 +41,14 @@ export const  exportDataFromJson = async (ticker: string): Promise<void> => {
         header: ['item', ... Object.keys(tickerContent.balanceSheet)]
       }
     )
-    await writeSheet(ticker, workSheet)
+    await writeSheet(ticker, workSheet, config)
     console.log('\n✅ Export complete!')
   } catch (e) {
     console.log(chalk.red(e))
   }
 }
 
-const writeSheet = async (ticker: string, workSheet: WorkSheet): Promise<void> => {
+const writeSheet = async (ticker: string, workSheet: WorkSheet, config: Config): Promise<void> => {
   try {
     const workbook: WorkBook = utils.book_new();
     utils.book_append_sheet(workbook, workSheet, "balanceSheet");
