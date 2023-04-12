@@ -5,8 +5,8 @@ import chalk from 'chalk';
 
 import fs from "fs/promises";
 import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
-import {Formated10K} from "./index.d";
-import {PluginConfig} from "../../core/plugin-manager/plugins";
+import {Formated10K} from "./index";
+import {PluginConfig} from "../../core/plugin-manager/plugins-manager";
 import {consoleInput} from "../../core/system/console.mjs";
 import {Config} from "../../core/config/config.d";
 

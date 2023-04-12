@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
 import {FormattedItem, ProcessingItem} from './index';
 import chalk from "chalk";
-import {PluginConfig} from "../../core/plugin-manager/plugins";
+import {PluginConfig} from "../../core/plugin-manager/plugins-manager";
 import {Config} from "../../core/config/config.d";
 import {consoleInput} from "../../core/system/console.mjs";
 

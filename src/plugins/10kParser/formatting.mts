@@ -1,8 +1,6 @@
 import {merge} from 'lodash-es'
-import {NormalizedItem, RawItem} from './formatting.d'
-import {WorkSheet} from "xlsx";
-import {utils} from "xlsx";
-import {type} from "os";
+import {NormalizedItem, RawItem} from './index'
+import {WorkSheet, utils} from "xlsx";
 
 export const formatRawJSON = (json: any, multiplyNum = 1000000): NormalizedItem =>
   json.reduce(
@@ -41,23 +39,19 @@ const getFieldName = (item: RawItem): string | false => {
   const fieldName: [string, number] = Object.entries(item).find(
     ([key]) => isNaN(new Date(key).getTime())
   )
-
   if(fieldName?.[1]){
     return (typeof fieldName[1] == 'string') ? fieldName[1] : 'ERROR_INVALID_FIELD_NAME'
   }
-
   return false
-
 }
 
 
 
-  // @ts-ignore
+// @ts-ignore
 export const formatRawOperations = (operationsSheet: WorkSheet): NormalizedItem => {
   operationsSheet['B1'] =  operationsSheet['B2']
   operationsSheet['C1'] =  operationsSheet['C2']
   operationsSheet['D1'] =  operationsSheet['D2']
   const operations = utils.sheet_to_json(operationsSheet)
-
   return formatRawJSON(operations)
 }
