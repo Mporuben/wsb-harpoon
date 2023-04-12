@@ -1,4 +1,4 @@
-import config from "../config.mjs";
+import config from "../../config.mjs";
 import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
 import {FormattedItem, ProcessingItem} from './export.d';

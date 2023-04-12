@@ -1,13 +1,16 @@
 import {read, utils} from 'xlsx';
-import {merge} from 'lodash-es';
+import {merge, values} from 'lodash-es';
 import {glob} from 'glob';
 import chalk from 'chalk';
 
 import fs from "fs/promises";
-import {formatRawJSON} from "../utils/formatting.mjs";
-import config from "../config.mjs";
+import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
+import config from "../../config.mjs";
 import {Formated10K} from "./10k";
 
+
+const balanceSheetKey = 'Consolidated Balance Sheets'
+const operationsStatementKey = 'Consolidated Statements of Oper'
 
 export const extractTickers10k = async (ticker: string): Promise<void> => {
   try {
@@ -35,9 +38,15 @@ export const read10kFileAndFormat = async (fileName: string): Promise<Formated10
   const buffer = await fs.readFile(fileName)
   const sheets = read(buffer)['Sheets']
   console.log(`${chalk.bgGreen('Parsed')} ${chalk.blue(fileName)}`)
+
+  const operationsStatement=  utils.sheet_to_json(sheets[operationsStatementKey])
+
+
+
+
   return {
-    balanceSheet: formatRawJSON(utils.sheet_to_json(sheets[config.balanceSheet])),
-    // incomeStatement: formatRawJSON(utils.sheet_to_json(sheets[config.incomeStatement]))
+    // balanceSheet: formatRawJSON(utils.sheet_to_json(sheets[balanceSheetKey])),
+    operationsStatement: formatRawOperations(sheets[operationsStatementKey]),
   }
 }
 

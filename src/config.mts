@@ -1,16 +1,14 @@
-import {Config, Operation} from './config.d'
+import {Config, Command} from './config.d'
 
 
 export const config: Config = {
   ticker: process.env.npm_config_ticker,
-  operation: validateOperation(process.env.npm_config_operation),
+  command: validateOperation(process.env.npm_config_command),
   rootDir: './data',
-  balanceSheet: 'Consolidated Balance Sheets',
-  operationsStatement: 'Consolidated Statements of Oper',
 }
 
 
-function validateOperation(operation: string | undefined): Operation | undefined {
+function validateOperation(operation: string | undefined): Command | undefined {
   if(operation == 'parse' || operation == 'export') {
     return operation
   }

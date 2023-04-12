@@ -1,10 +1,8 @@
 export interface Config {
   ticker?: string;
-  operation?: Operation
+  command?: Command
   rootDir: string;
-  balanceSheet: string
-  operationsStatement: string;
 }
 
 
-export type Operation = 'parse' | 'export'
+export type Command = 'parse' | 'export'
