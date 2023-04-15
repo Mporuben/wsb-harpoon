@@ -1,3 +1,9 @@
+
+export interface PluginConfig {
+  name: string;
+  commands: Commands;
+}
+
 export interface Commands {
   [key: string]: Command
 }
@@ -5,18 +11,11 @@ export interface Commands {
 export interface Command {
   description: string,
   origin?: string,
-  handler: (config: Config) => void
-}
-
-
-export interface PluginConfig {
-  name: string;
-  commands: Commands;
+  handler: (config: Config) => Promise<void>
 }
 
 export interface Config {
   rootDir: string;
-
   actionConfig: ActionConfig
 }
 

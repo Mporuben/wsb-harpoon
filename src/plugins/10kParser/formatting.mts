@@ -10,7 +10,6 @@ export const formatRawJSON = (json: any, multiplyNum = 1000000): NormalizedItem 
     {}
   )
 
-
 const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
   console.log(item)
   const field: string | boolean = getFieldName(item)
@@ -33,6 +32,8 @@ const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
     return acc
   }, {})
 }
+
+
 
 const getFieldName = (item: RawItem): string | false => {
   // @ts-ignore

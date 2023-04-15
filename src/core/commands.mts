@@ -5,12 +5,12 @@ import { config } from "./config.mjs";
 
 const commands: Commands  = { ...coreCommands()}
 
-export const execCommand = (command: string) => {
+export const execCommand = async (command: string) => {
   if (!commands[command]) {
     console.log(chalk.red(`Command ${command} not found`))
     return
   }
-  commands[command].handler(config)
+  await commands[command].handler(config)
 }
 
 export const addCommand = async (name: string, command: Command) => {
@@ -24,19 +24,17 @@ export const addCommand = async (name: string, command: Command) => {
 
 
 
-
-// INTERNAL
 function coreCommands(){
   return {
     help: {
       description: 'lists all commands',
       origin: 'core',
-      handler: () => helpHandler()
+      handler: async () => helpHandler()
     },
     exit: {
       description: 'exits the program',
       origin: 'core',
-      handler: () => process.exit(0)
+      handler: async () => process.exit(0)
     }
   }
 }
@@ -44,7 +42,7 @@ function coreCommands(){
 const helpHandler = () => {
   let text = 'Available commands:\n'
   const optionsString = Object.keys(commands).reduce((acc, command) =>
-      acc + chalk.cyan(`${command} - ${commands[command].description}\n`),
+      acc + chalk.cyan(`${command} [${commands[command].origin}] - ${commands[command].description}\n`),
     text
   )
   console.log(optionsString)

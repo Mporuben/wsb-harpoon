@@ -14,7 +14,7 @@ import {consoleInput} from "../../core/system.mjs";
 const plugin: PluginConfig = {
   name: '10kParser',
   commands: {
-    parse: {
+    ['10kParse']: {
       description: 'Parse 10k files',
       handler: extractTickers10k,
     }
@@ -69,4 +69,3 @@ const write10kExport = async (ticker: string, data: Formated10K, config: Config)
     JSON.stringify(data, null, 2)
   )
 }
-
