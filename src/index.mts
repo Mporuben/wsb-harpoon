@@ -7,16 +7,12 @@ import {initPlugins} from "./core/plugins-manager.mjs";
 
 
 
-const main = async () => {
-  printWelcomeMessage()
+export const main = async () => {
   await initPlugins()
+  printWelcomeMessage()
   const shodExitAfterAction = config.actionConfig.command !== undefined
   await action(shodExitAfterAction)
 }
-
-main()
-
-
 
 
 const action = async (shodExitAfterAction: boolean) => {
@@ -29,7 +25,20 @@ const action = async (shodExitAfterAction: boolean) => {
 }
 
 const printWelcomeMessage = () => {
-  console.log(chalk.cyan('----------------------------'));
-  console.log(chalk.cyan('Fin statement parser 💸 📈 '));
-  console.log(chalk.cyan('----------------------------\n'));
+  const version = '1.0.3'
+  const image =chalk.blue(
+`       .--.         |
+      |${chalk.red("*")}_${chalk.red("*")} |        |           ${chalk.green("$")}
+      |:_/ |        |          ${chalk.green('/')}
+     //   \\ \\       |   ${chalk.green('/\\    /')}
+    (|     | )      |  ${chalk.green('/  \\__/')}
+   /'\\_   _/\`\\      | ${chalk.green('/')} 
+   \\___)=(___/      --------------`)
+  console.log(image)
+  console.log(chalk.blue('----------------------------------'));
+  console.log(chalk.blue(`|   ${chalk.green("Fin statement parser")} 💸 📈   |`));
+  console.log(chalk.blue('----------------------------------'));
+  console.log(chalk.dim(`v${version}                  try "help" 
+`));
+
 }
