@@ -3,7 +3,7 @@ import {addCommand} from "./commands.mjs";
 import {PluginConfig} from "./core";
 import chalk from "chalk";
 
-const pluginsFolder = 'bin/plugins/**/index.mjs'
+const pluginsFolder = 'dist/plugins/**/index.mjs'
 
 export const initPlugins = async () => {
   try {
@@ -19,9 +19,14 @@ export const initPlugins = async () => {
 const installPlugin = async (fileLocation: string) => {
   try {
     const plugin: PluginConfig = (await import('../../' +fileLocation)).default
-    Object.entries(plugin.commands).forEach(([name, command]) => {
-      addCommand(name, {origin: plugin.name, ...command})
-    })
+    if (plugin.beforeInstall) {
+      await plugin.beforeInstall()
+    }
+    if(plugin.commands) {
+      Object.entries(plugin.commands).forEach(([name, command]) => {
+        addCommand(name, {origin: plugin.name, ...command})
+      })
+    }
   } catch (err) {
     console.log(chalk.red(`Unable to install plugin ${fileLocation}`))
   }

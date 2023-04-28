@@ -17,7 +17,6 @@ const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
     return {}
   }
 
-
   return Object.keys(item).reduce((acc: NormalizedItem, key: string) => {
     const date = new Date(key)
     if (!isNaN(date.getTime())) {

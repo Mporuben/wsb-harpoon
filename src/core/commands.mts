@@ -42,7 +42,7 @@ function coreCommands(){
 const helpHandler = () => {
   let text = 'Available commands:\n'
   const optionsString = Object.keys(commands).reduce((acc, command) =>
-      acc + chalk.cyan(`${command} [${commands[command].origin}] - ${commands[command].description}\n`),
+      acc + `${chalk.yellow(command)} [${commands[command].origin}] - ${commands[command].description}\n`,
     text
   )
   console.log(optionsString)
