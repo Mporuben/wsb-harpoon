@@ -21,9 +21,6 @@ export const addCommand = async (name: string, command: Command) => {
   }
 }
 
-
-
-
 function coreCommands(){
   return {
     help: {
@@ -42,7 +39,7 @@ function coreCommands(){
 const helpHandler = () => {
   let text = 'Available commands:\n'
   const optionsString = Object.keys(commands).reduce((acc, command) =>
-      acc + `${chalk.yellow(command)} [${commands[command].origin}] - ${commands[command].description}\n`,
+      acc + `${chalk.yellow(command)} [${commands[command].origin}] ${commands[command].description}\n`,
     text
   )
   console.log(optionsString)

@@ -2,8 +2,10 @@
 export interface PluginConfig {
   name: string;
   description?: string;
+  version?: string;
   commands?: Commands;
   beforeInstall?: () => Promise<void>;
+  afterInstall?: () => Promise<void>;
 }
 
 export interface Commands {

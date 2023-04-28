@@ -27,6 +27,9 @@ const installPlugin = async (fileLocation: string) => {
         addCommand(name, {origin: plugin.name, ...command})
       })
     }
+    if (plugin.afterInstall) {
+      await plugin.afterInstall()
+    }
   } catch (err) {
     console.log(chalk.red(`Unable to install plugin ${fileLocation}`))
   }
