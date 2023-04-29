@@ -3,10 +3,12 @@
   "type": "module",
   "scripts": {
     "build:core": "npm run build -w packages/core",
-    "build:tools": "npm run build -w packages/tools"
+    "build:tools": "npm run build -w packages/tools",
+    "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser"
   },
   "workspaces": [
     "packages/core",
-    "packages/tools"
+    "packages/tools",
+    "packages/plugins/10k-parser"
   ]
 }

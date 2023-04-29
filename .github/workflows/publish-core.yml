@@ -4,10 +4,6 @@
 name: Publish Core
 on:
   workflow_dispatch
-#on:
-#  release:
-#    types: [created]
-#    tagName: [core]
 
 
 jobs:

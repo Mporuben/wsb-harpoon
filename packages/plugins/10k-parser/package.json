@@ -1,0 +1,21 @@
+{
+  "name": "@wsb-harpoon/10k-parser",
+  "public": true,
+  "version": "0.0.1",
+  "description": "WSB Harpoon 10k Parser",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node bin/index.mjs",
+    "dev": "npm run build && npm run start"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@wsb-harpoon/tools": "^0.0.2"
+  }
+}
