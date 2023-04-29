@@ -3,15 +3,20 @@
 
 name: Publish Core
 
+
 on:
-  release:
-    types: [created]
-    tagName: [core]
+  push:
+    tags:
+      - core
+#on:
+#  release:
+#    types: [created]
+#    tagName: [core]
 
 
 jobs:
 
-  build-publish:
+  build-publish-core:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
