@@ -6,12 +6,12 @@ import chalk from 'chalk';
 import fs from "fs/promises";
 import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
 import {Formated10K} from "./index";
-import {PluginConfig, Config} from "../../core/core";
+import {Config} from "@wsb-harpoon/tools/dist";
 import {consoleInput} from "../../core/system.mjs";
+import {definePlugin} from "@wsb-harpoon/tools/dist";
 
 
-
-const plugin: PluginConfig = {
+const plugin = definePlugin({
   name: '10kParser',
   commands: {
     ['10kParse']: {
@@ -19,7 +19,8 @@ const plugin: PluginConfig = {
       handler: extractTickers10k,
     }
   }
-}
+})
+
 export default plugin
 
 
