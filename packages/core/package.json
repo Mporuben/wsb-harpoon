@@ -1,7 +1,7 @@
 {
   "name": "wsb-harpoon",
   "public": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./bin/index.mjs",
   "bin": {
