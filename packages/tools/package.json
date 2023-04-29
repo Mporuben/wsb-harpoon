@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/tools",
   "public": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tools for WSB Harpoon development",
   "type": "module",
   "publishConfig": {
@@ -12,9 +12,9 @@
     "start": "node bin/index.mjs",
     "dev": "npm run build && npm run start"
   },
-  "main": "index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "types"
