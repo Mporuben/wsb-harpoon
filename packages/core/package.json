@@ -1,0 +1,28 @@
+{
+  "name": "wsb-harpoon",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./bin/index.mjs",
+  "bin": {
+    "wsb-harpoon": "./bin/index.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node bin/index.mjs",
+    "dev": "npm run build && npm run start"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "glob": "^9.3.4",
+    "lodash-es": "^4.17.21",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.7",
+    "@types/node": "^18.15.3",
+    "typescript": "^5.0.2"
+  }
+}

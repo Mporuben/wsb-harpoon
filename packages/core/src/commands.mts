@@ -32,7 +32,7 @@ function coreCommands(){
       description: 'exits the program',
       origin: 'core',
       handler: async () => process.exit(0)
-    }
+    },
   }
 }
 

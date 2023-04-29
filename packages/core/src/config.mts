@@ -1,7 +1,7 @@
 import {Config, ActionConfig} from './core'
 
 export const config: Config = {
-  rootDir: './data',
+  rootDir: '~/wsb-harpoon',
   actionConfig: getActionConfig(),
 }
 

@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 
-import config from './core/config.mjs';
-import {consoleInput} from './core/system.mjs';
-import {execCommand} from './core/commands.mjs';
-import {initPlugins} from "./core/plugins-manager.mjs";
+import config from './config.mjs';
+import {consoleInput} from './utils/system.mjs';
+import {execCommand} from './commands.mjs';
+import {initPlugins} from "./plugins-manager.mjs";
 
 
 

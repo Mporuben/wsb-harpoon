@@ -1,28 +1,12 @@
 {
-  "name": "wsbets-terminal",
-  "version": "0.0.1",
+  "name": "wsb-harpoon-monorepo",
   "type": "module",
-  "main": "./bin/index.mjs",
-  "bin": {
-    "wsbets": "./bin/index.mjs"
-  },
-  "files": [
-    "bin"
-  ],
   "scripts": {
-    "build": "npx tsc",
-    "start": "node bin/index.mjs",
-    "dev": "npm run build && npm run start"
+    "build:core": "npm run build -w packages/core",
+    "build:tools": "npm run build -w packages/tools"
   },
-  "dependencies": {
-    "chalk": "^5.2.0",
-    "glob": "^9.3.4",
-    "lodash-es": "^4.17.21",
-    "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.7",
-    "@types/node": "^18.15.3",
-    "typescript": "^5.0.2"
-  }
+  "workspaces": [
+    "packages/core",
+    "packages/tools"
+  ]
 }
