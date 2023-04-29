@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "description": "Tools for WSB Harpoon development",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "npx tsc",
     "start": "node bin/index.mjs",
