@@ -1,4 +1,16 @@
 {
   "name": "@wsb-harpoon/tools",
-  "version": "0.0.1"
+  "public": true,
+  "version": "0.0.1",
+  "description": "Tools for WSB Harpoon development",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node bin/index.mjs",
+    "dev": "npm run build && npm run start"
+  },
+  "files": [
+    "dist",
+    "types"
+  ]
 }
