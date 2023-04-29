@@ -1,20 +1,23 @@
 {
   "name": "wsb-harpoon",
   "public": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./bin/index.mjs",
   "bin": {
     "wsb-harpoon": "./bin/index.mjs"
   },
   "files": [
-    "bin"
+    "bin",
+    "dist",
+    "internals"
   ],
   "scripts": {
     "build": "npx tsc",
     "start": "node bin/index.mjs",
     "dev": "npm run build && npm run start"
   },
+
   "dependencies": {
     "chalk": "^5.2.0",
     "glob": "^9.3.4",
