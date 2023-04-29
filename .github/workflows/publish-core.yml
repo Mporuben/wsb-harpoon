@@ -6,14 +6,12 @@ name: Publish Core
 on:
   release:
     types: [created]
-#on:
-#  push:
-#    branch: [ master ]
+    tags: [core]
+
 
 jobs:
 
   build-publish:
-#    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
