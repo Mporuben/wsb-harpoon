@@ -6,8 +6,10 @@ name: Publish Core
 
 on:
   push:
+    branches:
+      - 'master'
     tags:
-      - core
+      - 'core'
 #on:
 #  release:
 #    types: [created]

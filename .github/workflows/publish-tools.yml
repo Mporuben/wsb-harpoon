@@ -5,9 +5,10 @@ name: Publish Tools
 
 on:
   push:
+    branches:
+      - 'master'
     tags:
-      - tools
-
+      - 'tools'
 
 jobs:
   build-publish-tools:
