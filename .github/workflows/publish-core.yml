@@ -3,12 +3,12 @@
 
 name: Publish Core
 
-#on:
-#  release:
-#    types: [created]
 on:
-  push:
-    branch: [ master ]
+  release:
+    types: [created]
+#on:
+#  push:
+#    branch: [ master ]
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm ci -w packages/core
       - run: npm run build:core
       - run: npm publish -w packages/core
         env:
