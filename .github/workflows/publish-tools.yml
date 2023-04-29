@@ -4,11 +4,7 @@
 name: Publish Tools
 
 on:
-  push:
-    branches:
-      - 'master'
-    tags:
-      - 'tools'
+  workflow_dispatch
 
 jobs:
   build-publish-tools:
