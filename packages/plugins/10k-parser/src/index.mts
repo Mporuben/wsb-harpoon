@@ -4,11 +4,14 @@ import {glob} from 'glob';
 import chalk from 'chalk';
 
 import fs from "fs/promises";
+import readline from 'readline';
 import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
 import {Formated10K} from "./index";
-import {Config} from "@wsb-harpoon/tools/dist";
-import {consoleInput} from "../../core/system.mjs";
-import {definePlugin} from "@wsb-harpoon/tools/dist";
+import {Config} from "@wsb-harpoon/tools";
+import {definePlugin} from "@wsb-harpoon/tools";
+
+
+
 
 
 const plugin = definePlugin({
@@ -70,3 +73,17 @@ const write10kExport = async (ticker: string, data: Formated10K, config: Config)
     JSON.stringify(data, null, 2)
   )
 }
+
+
+export const consoleInput = (message: string): Promise<string> => new Promise((resolve, reject) => {
+  const readlineInterface = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  readlineInterface.question(message, (input: string) => {
+    resolve(input);
+    readlineInterface.close();
+  });
+
+})
