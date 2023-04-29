@@ -1,11 +1,14 @@
 {
-  "name": "fin",
-  "type": "module",
+  "name": "wsbets-terminal",
   "version": "0.0.1",
+  "type": "module",
   "main": "./bin/index.mjs",
   "bin": {
-    "fin": "./bin/index.js"
+    "wsbets": "./bin/index.mjs"
   },
+  "files": [
+    "bin"
+  ],
   "scripts": {
     "build": "npx tsc",
     "start": "node bin/index.mjs",
@@ -21,9 +24,5 @@
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.15.3",
     "typescript": "^5.0.2"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.5.0"
   }
 }

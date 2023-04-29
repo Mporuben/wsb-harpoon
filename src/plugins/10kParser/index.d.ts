@@ -1,3 +1,8 @@
+export interface Formated10K {
+  balanceSheet?: NormalizedItem
+  operationsStatement?: NormalizedItem
+}
+
 export interface NormalizedItem {
   [year: string]: {
     [field: string]: number

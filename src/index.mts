@@ -1,30 +1,44 @@
 import chalk from 'chalk';
 
-import {consoleInput} from './utils/system/console.mjs';
-import {extractTickers10k} from './plugins/10k.mjs';
-import config from './config.mjs';
-import {exportDataFromJson} from './plugins/export.mjs'
-import {OperationMap} from './index.d'
+import config from './core/config.mjs';
+import {consoleInput} from './core/system.mjs';
+import {execCommand} from './core/commands.mjs';
+import {initPlugins} from "./core/plugins-manager.mjs";
 
-const main = async () => {
-  console.log(chalk.cyan('Fin statement parser 💸 📈 \n'));
-  const ticker = config.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
-  const operation = config.operation || await getOperation()
-  switch (operation) {
-    case 'parse': await extractTickers10k(ticker); break;
-    case 'export': await exportDataFromJson(ticker); break;
+
+
+export const main = async () => {
+  printWelcomeMessage()
+  await initPlugins()
+  const shodExitAfterAction = config.actionConfig.command !== undefined
+  action(shodExitAfterAction)
+}
+
+
+const action = async (shodExitAfterAction: boolean) => {
+  const command = config.actionConfig['command'] || await consoleInput(chalk.yellow('Enter a command: '))
+  await execCommand(command)
+  config.actionConfig = {}
+  if (!shodExitAfterAction) {
+    action(false)
   }
 }
 
-const getOperation = async (): Promise<string> => {
-  const map: OperationMap = {'1': 'parse', '2': 'export'}
-  const optionsString = Object.keys(map).reduce((acc, key) =>
-    acc + chalk.cyan(`  ${key}. ${map[key]}\n`),
-    ''
-  )
-  return map[await consoleInput(chalk.yellow(`Enter operations:\n${optionsString}`))]
+const printWelcomeMessage = () => {
+  const version = '1.0.3'
+  const image =chalk.blue(
+`       .--.         
+      |${chalk.red("*")}_${chalk.red("*")} |      |           ${chalk.green("$")}
+      |:_/ |      |          ${chalk.green('/')}
+     //   \\ \\     |   ${chalk.green('/\\    /')}
+    (|     | )    |  ${chalk.green('/  \\__/')}
+   /'\\_   _/\`\\    | ${chalk.green('/')} 
+   \\___)=(___/    --------------
+   `)
+  console.log(image)
+  console.log(chalk.blue('----------------------------------'));
+  console.log(chalk.blue(`|   ${chalk.green("Fin statement parser")} 💸 📈   |`));
+  console.log(chalk.blue('----------------------------------'));
+  console.log(chalk.dim(`v${version}                  try "help"`));
+
 }
-
-
-main()
-

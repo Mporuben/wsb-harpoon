@@ -5,11 +5,14 @@
     "target": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "bin",
+    "outDir": "dist",
     "strict": true,
     "types": [
       "node"
     ]
+  },
+  "alias": {
+    "@": "./src"
   },
   "lib": ["es2015"]
 }
