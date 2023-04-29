@@ -6,7 +6,7 @@ name: Publish Core
 on:
   release:
     types: [created]
-    tags: [tools]
+    tagName: [tools]
 
 
 jobs:
