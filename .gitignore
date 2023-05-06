@@ -3,3 +3,17 @@ dist
 
 .DS_Store
 .idea
+
+
+node_modules
+*.iml
+.idea
+*.log*
+.nuxt
+.vscode
+.DS_Store
+coverage
+dist
+sw.*
+.env
+.output
