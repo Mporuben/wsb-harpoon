@@ -1,26 +1,24 @@
 export default defineAppConfig({
   docus: {
-    title: 'Docus',
+    title: 'WSB Harpoon',
     description: 'The best place to start your documentation.',
     image: 'https://user-images.githubusercontent.com/904724/185365452-87b7ca7b-6030-4813-a2db-5e65c785bf88.png',
     socials: {
-      twitter: 'nuxtstudio',
-      github: 'nuxt-themes/docus'
+      github: 'Mporuben/wsb-harpoon'
     },
     aside: {
-      level: 0,
+      level: 2,
       exclude: []
     },
     header: {
-      logo: true
+      logo: true,
+      title: 'WSB Harpoon',
     },
     footer: {
-      iconLinks: [
-        {
-          href: 'https://nuxt.com',
-          icon: 'simple-icons:nuxtdotjs'
-        }
-      ]
+      credits: {
+        icon: '',
+        text: 'WSB Harpoon',
+      },
     }
   }
 })
