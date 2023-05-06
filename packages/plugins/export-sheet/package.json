@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/export-sheet",
   "public": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "WSB Harpoon ",
   "type": "module",
   "publishConfig": {
@@ -16,6 +16,6 @@
     "dist"
   ],
   "dependencies": {
-    "@wsb-harpoon/tools": "^0.0.9"
+    "@wsb-harpoon/tools": "^0.0.10"
   }
 }

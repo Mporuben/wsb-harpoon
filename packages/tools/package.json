@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/tools",
   "public": true,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Tools for WSB Harpoon plugins development",
   "type": "module",
   "publishConfig": {
@@ -22,12 +22,11 @@
   ],
   "dependencies": {
     "chalk": "^5.2.0",
-    "glob": "^9.3.4",
     "lodash-es": "^4.17.21",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "@types/lodash-es": "^4.17.7"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.15.3",
     "typescript": "^5.0.2"
   }

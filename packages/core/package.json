@@ -18,12 +18,9 @@
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
-    "chalk": "^5.2.0",
-    "lodash-es": "^4.17.21",
-    "xlsx": "^0.18.5"
+    "@wsb-harpoon/tools": "^0.0.10"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.15.3",
     "typescript": "^5.0.2"
   }
