@@ -6,11 +6,15 @@ on:
   workflow_dispatch
 
 jobs:
-  eslint:
+  build-publish-tools:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci -w qa/eslint
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci -w packages/tools
       - run: npm run build:tools
       - run: npm publish -w packages/tools
         env:
