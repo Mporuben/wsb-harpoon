@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/10k-parser",
   "public": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WSB Harpoon 10k Parser",
   "type": "module",
   "publishConfig": {

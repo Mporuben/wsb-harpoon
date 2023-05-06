@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/export-sheet",
   "public": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WSB Harpoon ",
   "type": "module",
   "publishConfig": {
