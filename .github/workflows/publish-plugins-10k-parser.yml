@@ -16,10 +16,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci -w packages/utils
+      - run: npm ci
       - run: npm run build:utils
-
-      - run: npm ci -w packages/plugins/10k-parser
       - run: npm run build:plugin:10k-parser
       - run: npm publish -w packages/plugins/10k-parser
         env:
