@@ -1,7 +1,7 @@
 {
   "name": "@wsb-harpoon/tools",
   "public": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Tools for WSB Harpoon plugins development",
   "type": "module",
   "publishConfig": {
