@@ -8,7 +8,8 @@ import readline from 'readline';
 import {formatRawJSON, formatRawOperations} from "./formatting.mjs";
 import {Formated10K} from "./index";
 
-import {Config, definePlugin} from "@wsb-harpoon/tools";
+import {definePlugin} from "@wsb-harpoon/tools";
+import {Config} from "@wsb-harpoon/tools/types";
 
 
 

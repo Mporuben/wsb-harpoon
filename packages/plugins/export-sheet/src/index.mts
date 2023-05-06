@@ -5,7 +5,7 @@ import chalk from "chalk";
 
 
 
-import {PluginConfig, Config} from "@wsb-harpoon/tools";
+import {PluginConfig, Config} from "@wsb-harpoon/tools/types";
 import readline from "readline";
 
 
