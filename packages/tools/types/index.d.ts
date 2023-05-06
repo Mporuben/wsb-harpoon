@@ -1,8 +1,3 @@
-
-
-declare module '@wsb-harpoon/tools' {}
-
-
 export interface PluginConfig {
   name: string;
   description?: string;
@@ -30,5 +25,3 @@ export interface Config {
 export interface ActionConfig {
   [key: string]: string;
 }
-
-
