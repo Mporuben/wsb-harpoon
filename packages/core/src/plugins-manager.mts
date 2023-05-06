@@ -1,7 +1,7 @@
-import {glob} from "glob";
-import {addCommand} from "./commands.mjs";
-import {PluginConfig} from "./core";
-import chalk from "chalk";
+import {glob} from 'glob';
+import {addCommand} from './commands.mjs';
+import {PluginConfig} from './core';
+import chalk from 'chalk';
 
 const pluginsFolder = 'dist/plugins/**/index.mjs'
 

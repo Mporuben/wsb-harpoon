@@ -18,6 +18,6 @@ function getActionConfig(): ActionConfig {
 }
 
 
- export default config
+export default config
 
 

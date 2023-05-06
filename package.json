@@ -1,14 +1,18 @@
 {
   "name": "wsb-harpoon-monorepo",
   "description": "Monorepo for WSB Harpoon core plugins and docs",
-  "type": "module",
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "build:core": "npm run build -w packages/core",
     "build:tools": "npm run build -w packages/tools",
-    "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser"
+    "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser",
+    "@Comment----------------> Linting": "",
+    "lint": "eslint ./packages/**/src  --ext .js,.ts,.mts --max-warnings 10",
+    "lint:fix": "eslint ./packages/**/src --ext .js,.ts,.mts --fix",
+    "lint:errors": "eslint ./packages/**/src --ext .js,.ts,.mts --quiet"
   },
   "workspaces": [
+    "qa/eslint",
     "packages/core",
     "packages/tools",
     "packages/plugins/10k-parser"

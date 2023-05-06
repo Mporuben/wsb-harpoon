@@ -1,18 +1,20 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 
 import { homedir } from 'os'
-import * as path from "path";
+import * as path from 'path';
 
-
-
-
-
-export const initDataFolder =  async () => {
+export const initDataFolder =  () => {
   console.log('setting up data folder')
-  await fs.mkdirSync(path.join(homedir(), 'wsb-harpoon') , { recursive: true });
-  await fs.mkdirSync(path.join(homedir(), 'wsb-harpoon','/.internals') , { recursive: true });
-  await fs.mkdirSync(path.join(homedir(), 'wsb-harpoon','/.internals/plugins') , { recursive: true });
-  await fs.mkdirSync(path.join(homedir(), 'wsb-harpoon','/raw') , { recursive: true });
-  await fs.mkdirSync(path.join(homedir(), 'wsb-harpoon','/exports') , { recursive: true });
+  const folders = [
+    '',
+    '/.internals',
+    '/.internals/plugins',
+    '/raw',
+    '/exports'
+  ]
+
+  folders.forEach(folder => {
+    fs.mkdirSync(path.join(homedir(), 'wsb-harpoon', folder) , { recursive: true });
+  })
   console.log('folder structure created')
 }

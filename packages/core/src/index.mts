@@ -4,8 +4,8 @@ import {readFileSync} from 'fs'
 import config from './config.mjs';
 import {consoleInput} from './utils/system.mjs';
 import {execCommand} from './commands.mjs';
-import {initPlugins} from "./plugins-manager.mjs";
-import {initDataFolder} from "./initFolder.mjs";
+import {initPlugins} from './plugins-manager.mjs';
+import {initDataFolder} from './initFolder.mjs';
 
 
 
