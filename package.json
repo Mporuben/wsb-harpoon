@@ -1,7 +1,9 @@
 {
   "name": "wsb-harpoon-monorepo",
+  "description": "Monorepo for WSB Harpoon core plugins and docs",
   "type": "module",
   "scripts": {
+    "build": "npm run build --workspaces --if-present",
     "build:core": "npm run build -w packages/core",
     "build:tools": "npm run build -w packages/tools",
     "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser"
