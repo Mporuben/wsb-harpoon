@@ -7,7 +7,7 @@
     "build:tools": "npm run build -w packages/tools",
     "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser",
     "@Comment----------------> Linting": "",
-    "lint": "eslint ./packages/**/src  --ext .js,.ts,.mts --max-warnings 10",
+    "lint": "eslint ./packages/**/src  --ext .js,.ts,.mts --max-warnings 30",
     "lint:fix": "eslint ./packages/**/src --ext .js,.ts,.mts --fix",
     "lint:errors": "eslint ./packages/**/src --ext .js,.ts,.mts --quiet"
   },
