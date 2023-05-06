@@ -1,18 +1,19 @@
 import chalk from 'chalk';
 import {readFileSync} from 'fs'
 
-import config from './config.mjs';
+import config from './utils/config.mjs';
 import {consoleInput} from './utils/system.mjs';
-import {execCommand} from './commands.mjs';
-import {initPlugins} from './plugins-manager.mjs';
-import {initDataFolder} from './initFolder.mjs';
+import {addCommand, execCommand} from './modules/commands/commands.mjs';
+import {installPlugins} from './modules/plugins/plugins.mjs';
+import {initWorkspace} from './modules/workspace/workspace.mjs';
 
 
 
 export const main = async () => {
-  await initDataFolder()
   printWelcomeMessage()
-  await initPlugins()
+  await initWorkspace()
+
+  await installPlugins(addCommand)
   const shodExitAfterAction = config.actionConfig.command !== undefined
   action(shodExitAfterAction)
 }

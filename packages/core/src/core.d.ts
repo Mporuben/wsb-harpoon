@@ -19,7 +19,9 @@ export interface Command {
 }
 
 export interface Config {
+  internalDir: string;
   rootDir: string;
+  pluginsPackagePath: string;
   actionConfig: ActionConfig
 }
 
@@ -28,3 +30,4 @@ export interface ActionConfig {
 }
 
 
+export type AddCommand = (name: string, command: Command) => Promise<void>

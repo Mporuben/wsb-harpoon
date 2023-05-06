@@ -1,7 +1,11 @@
-import {Config, ActionConfig} from './core'
+import {Config, ActionConfig} from '../core'
+import path from "path";
+import {homedir} from "os";
 
 export const config: Config = {
   rootDir: '~/wsb-harpoon',
+  internalDir: path.join(homedir(), 'wsb-harpoon/.internals'),
+  pluginsPackagePath: path.join(homedir(), 'wsb-harpoon/.internals', 'package.json'),
   actionConfig: getActionConfig(),
 }
 

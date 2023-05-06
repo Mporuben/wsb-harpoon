@@ -1,6 +1,6 @@
 import chalk from 'chalk';
-import {Command, Commands} from './core';
-import { config } from './config.mjs';
+import {Command, Commands} from '../../core';
+import { config } from '../../utils/config.mjs';
 
 
 const commands: Commands  = { ...coreCommands()}
