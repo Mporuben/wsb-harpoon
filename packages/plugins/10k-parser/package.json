@@ -16,6 +16,6 @@
     "dist"
   ],
   "dependencies": {
-    "@wsb-harpoon/tools": "^0.0.6"
+    "@wsb-harpoon/tools": "^0.0.7"
   }
 }
