@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci -w packages/tools
+      - run: npm ci -w qa/eslint
       - run: npm run lint
 
