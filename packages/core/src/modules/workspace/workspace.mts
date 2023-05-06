@@ -2,9 +2,9 @@ import * as fs from 'fs';
 
 import { homedir } from 'os'
 import * as path from 'path';
-import {spawn} from "child_process";
-import chalk from "chalk";
-import config from "../../utils/config.mjs";
+import {spawn} from 'child_process';
+import chalk from 'chalk';
+import config from '../../utils/config.mjs';
 
 
 export const initWorkspace = async () => {
@@ -52,7 +52,7 @@ const installPluginsPackage = async () => new Promise((resolve, reject) => {
     if (code !== 0) {
       child.stderr.on('data', (data) => reject(data));
     } else {
-      child.stdout.on ('data', (data) => resolve(true));
+      child.stdout.on ('data', () => resolve(true));
     }
   });
 

@@ -1,6 +1,6 @@
 import {Config, ActionConfig} from '../core'
-import path from "path";
-import {homedir} from "os";
+import path from 'path';
+import {homedir} from 'os';
 
 export const config: Config = {
   rootDir: '~/wsb-harpoon',

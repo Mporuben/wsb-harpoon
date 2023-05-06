@@ -1,11 +1,8 @@
 import {AddCommand, PluginConfig} from '../../core';
 import chalk from 'chalk';
-import {readFileSync} from "fs";
-import config from "../../utils/config.mjs";
-import path from "path";
-
-const pluginsFolder = 'dist/plugins/**/index.mjs'
-
+import {readFileSync} from 'fs';
+import config from '../../utils/config.mjs';
+import path from 'path';
 
 export const installPlugins = async (addCommand: AddCommand): Promise<void> => {
   try {
