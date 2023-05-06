@@ -17,7 +17,8 @@
   "types": "dist/index.d.mts",
   "files": [
     "dist",
-    "types"
+    "types",
+    "src"
   ],
   "dependencies": {
     "chalk": "^5.2.0",
