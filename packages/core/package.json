@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "chalk": "^5.2.0",
-    "glob": "^9.3.4",
     "lodash-es": "^4.17.21",
     "xlsx": "^0.18.5"
   },
