@@ -17,8 +17,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci -w packages/tools
       - run: npm run build:tools
-      - run: npm ci -w packages/plugins/esport-sheet
-      - run: npm run build:plugin:esport-sheet
-      - run: npm publish -w packages/plugins/esport-sheet
+      - run: npm ci -w packages/plugins/export-sheet
+      - run: npm run build:plugin:export-sheet
+      - run: npm publish -w packages/plugins/export-sheet
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
