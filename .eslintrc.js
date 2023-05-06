@@ -4,7 +4,7 @@ module.exports = {
     '@typescript-eslint/eslint-plugin'
   ],
 
-  "parser": "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
 
   root: true,
 

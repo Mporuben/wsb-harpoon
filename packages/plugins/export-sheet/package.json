@@ -1,5 +1,5 @@
 {
-  "name": "@wsb-harpoon/10k-parser",
+  "name": "@wsb-harpoon/export-sheet",
   "public": true,
   "version": "0.0.1",
   "description": "WSB Harpoon ",

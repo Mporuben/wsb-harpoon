@@ -2,8 +2,11 @@ import fs from "fs/promises";
 import {write, utils, WorkSheet, WorkBook} from 'xlsx'
 import {FormattedItem, ProcessingItem} from './index';
 import chalk from "chalk";
-import {PluginConfig, Config} from "../../core/core";
-import {consoleInput} from "../../core/system.mjs";
+
+
+
+import {PluginConfig, Config} from "@wsb-harpoon/tools";
+import readline from "readline";
 
 
 
@@ -74,5 +77,19 @@ const formatDateForWorkSheet = (tickerContent: any): FormattedItem[] => {
   return Object.keys(items).map((itemName) => ({ item: itemName, ...items[itemName]}))
 }
 
+
+
+export const consoleInput = (message: string): Promise<string> => new Promise((resolve, reject) => {
+  const readlineInterface = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  readlineInterface.question(message, (input: string) => {
+    resolve(input);
+    readlineInterface.close();
+  });
+
+})
 
 
