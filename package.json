@@ -4,18 +4,19 @@
   "scripts": {
     "@Comment---------------->Build": "",
     "build": "npm run build --workspaces --if-present",
-    "build:doc": "npm run build -w docs",
     "build:core": "npm run build -w packages/core",
     "build:tools": "npm run build -w packages/tools",
     "build:plugin:10k-parser": "npm run build -w packages/plugins/10k-parser",
     "build:plugin:export-sheet": "npm run build -w packages/plugins/export-sheet",
     "@Comment---------------->Development": "",
     "dev:core": "npm run dev -w packages/core",
-    "dev:doc": "npm run dev -w docs",
     "@Comment---------------->Linting": "",
     "lint": "eslint ./packages/**/src  --ext .js,.ts,.mts --max-warnings 30",
     "lint:fix": "eslint ./packages/**/src --ext .js,.ts,.mts --fix",
-    "lint:errors": "eslint ./packages/**/src --ext .js,.ts,.mts --quiet"
+    "lint:errors": "eslint ./packages/**/src --ext .js,.ts,.mts --quiet",
+    "@Comment---------------->Documentation": "",
+    "build:doc": "npm run build -w docs",
+    "dev:doc": "npm run dev -w docs"
   },
   "workspaces": [
     "qa/eslint",
