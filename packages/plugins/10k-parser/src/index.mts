@@ -69,7 +69,7 @@ const read10kFileAndFormat = async (fileName: string): Promise<Formated10K> => {
 
 const write10kExport = async (ticker: string, data: Formated10K, config: Config): Promise<void> => {
   await fs.writeFile(
-    `${config.rootDir}/internal/${ticker}.json`,
+    `${config.rootDir}/.internal/${ticker}.json`,
     JSON.stringify(data, null, 2)
   )
 }

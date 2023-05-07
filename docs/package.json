@@ -7,11 +7,13 @@
     "build": "nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.9.0",
     "@nuxt/eslint-config": "^0.1.1",
-    "nuxt": "3.3.3"
+    "nuxt": "3.3.3",
+    "push-dir": "^0.4.1"
   }
 }

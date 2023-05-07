@@ -26,7 +26,7 @@ export default plugin
 async function exportDataFromJson(config: Config): Promise<void> {
   try {
     const ticker = config.actionConfig.ticker || await consoleInput(chalk.yellow('Enter a ticker: '))
-    const filePath = `${config.rootDir}/internal/${ticker}.json`
+    const filePath = `${config.rootDir}/.internal/${ticker}.json`
     let data
     try {
       data = await fs.readFile(filePath)
