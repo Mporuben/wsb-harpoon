@@ -3,7 +3,7 @@ WSB Harpoon is extendable CLI tool for parsing and analyzing financial reports.
 
 ![title image](docs/assets/title.png)
 
-
+https://mporuben.github.io/wsb-harpoon/
 
 ## Run
 pre-requisites:
