@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   app: {
-    cdnURL: '/ws-harpoon/',
+    cdnURL: '/wsb-harpoon/',
   }
 })
