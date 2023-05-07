@@ -7,7 +7,7 @@ export default defineAppConfig({
       github: 'Mporuben/wsb-harpoon'
     },
     aside: {
-      level: 2,
+      level: 1,
       exclude: []
     },
     header: {
