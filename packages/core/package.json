@@ -1,7 +1,7 @@
 {
   "name": "wsb-harpoon",
   "public": true,
-  "version": "0.0.6",
+  "version": "1.0.0",
   "type": "module",
   "main": "./bin/index.mjs",
   "bin": {
@@ -18,7 +18,7 @@
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
-    "@wsb-harpoon/tools": "^0.0.10"
+    "@wsb-harpoon/tools": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.3",

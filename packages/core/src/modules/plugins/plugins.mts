@@ -7,8 +7,6 @@ import path from 'path';
 export const installPlugins = async (addCommand: AddCommand): Promise<void> => {
   try {
     const pluginsNames: string[] = getPluginsNames()
-
-
     for (const pluginName of pluginsNames) {
       const pluginPath = path.join(config.internalDir, 'node_modules', pluginName, 'dist/index.mjs')
       await installPlugin(pluginPath, addCommand)
