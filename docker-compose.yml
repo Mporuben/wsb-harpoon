@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  dev:
+    container_name: wsb-harpoon
+    build: ./docker
+    volumes:
+      - ./:/app
+      - ./docker/volumes/ws-harpoon:/root/wsb-harpoon
+      - /root/.npm
+
