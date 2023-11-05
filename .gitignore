@@ -4,6 +4,8 @@ dist
 .DS_Store
 .idea
 
+.docker/volumes
+
 
 node_modules
 *.iml

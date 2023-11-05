@@ -12,7 +12,6 @@ module.exports = {
     node: true,
   },
 
-
   extends: [
     'plugin:sonarjs/recommended',
   ],
