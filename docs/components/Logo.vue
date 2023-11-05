@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img src="/logo.png" alt="logo"  style="width: 100px; margin-top: -30px"/>
+    <img src="/logo.png" alt="logo"  style="width: 55px; margin-top: -25px"/>
   </div>
 </template>
 

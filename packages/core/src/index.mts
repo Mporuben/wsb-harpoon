@@ -6,7 +6,8 @@ import {consoleInput} from './utils/system.mjs';
 import {addCommand, execCommand} from './modules/commands/commands.mjs';
 import {installPlugins} from './modules/plugins/plugins.mjs';
 import {initWorkspace} from './modules/workspace/workspace.mjs';
-
+import path from "path";
+import { fileURLToPath } from 'url';
 
 
 export const main = async () => {
@@ -66,5 +67,8 @@ const printWelcomeMessage = () => {
 }
 
 
-const readVersion = () => JSON.parse(readFileSync('./package.json', 'utf8')).version
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const readVersion = () =>
+  JSON.parse(readFileSync(path.join(__dirname, '../package.json'), 'utf8')).version
 
