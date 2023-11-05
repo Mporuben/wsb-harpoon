@@ -15,10 +15,7 @@ export default defineAppConfig({
       title: 'WSB Harpoon',
     },
     footer: {
-      credits: {
-        icon: '',
-        text: 'WSB Harpoon',
-      },
+
     }
   }
 })
