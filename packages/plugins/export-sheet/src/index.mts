@@ -13,7 +13,7 @@ import readline from "readline";
 const plugin: PluginConfig = {
   name: 'exportSheet',
   commands: {
-    export: {
+    exportSheet: {
       description: 'export data to excel sheet',
       handler: exportDataFromJson,
     }

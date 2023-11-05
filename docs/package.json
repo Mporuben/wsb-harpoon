@@ -11,9 +11,9 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
-    "@nuxt-themes/docus": "^1.9.0",
-    "@nuxt/eslint-config": "^0.1.1",
-    "nuxt": "^3.4.3",
+    "@nuxt-themes/docus": "^1.15.0",
+    "@nuxt/eslint-config": "^0.2.0",
+    "nuxt": "^3.8.0",
     "push-dir": "^0.4.1"
   }
 }
