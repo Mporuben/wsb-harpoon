@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "npx tsc && cp types/tools.d.ts ./dist",
-    "start": "node bin/index.mjs",
+    "start": "node dist/index.mjs",
     "dev": "npm run build && npm run start"
   },
   "main": "dist/index.mjs",
