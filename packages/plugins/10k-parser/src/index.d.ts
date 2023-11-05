@@ -1,4 +1,4 @@
-export interface Formated10K {
+export interface Formatted10K {
   balanceSheet?: NormalizedItem
   operationsStatement?: NormalizedItem
 }

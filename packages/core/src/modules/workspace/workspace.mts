@@ -21,7 +21,7 @@ export const initWorkspace = async () => {
 
 
 const createFolderStructure = () => {
-  const folders: string[] = ['', '.internals', 'raw', 'exports']
+  const folders: string[] = ['', '.internals', 'raw', 'exports', '.internals/documents']
 
   folders.forEach((folder) => {
     const dir = path.join(homedir(), 'wsb-harpoon', folder)
@@ -34,7 +34,7 @@ const createFolderStructure = () => {
 
 const initPlugins = async () => {
   try {
-    const pluginsPackage = JSON.parse(fs.readFileSync('./internals/package.json', 'utf8'))
+    const pluginsPackage = JSON.parse(fs.readFileSync('./.internals/package.json', 'utf8'))
     fs.writeFileSync(config.pluginsPackagePath, JSON.stringify(pluginsPackage, null, 2))
     await installPluginsPackage()
     console.log(chalk.dim('Default plugins installed!'))

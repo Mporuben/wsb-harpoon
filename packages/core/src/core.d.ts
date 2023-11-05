@@ -15,7 +15,7 @@ export interface Commands {
 export interface Command {
   description: string,
   origin?: string,
-  handler: (config: Config) => Promise<void>
+  handler: (config: Config) => Promise<void | string | string[]>
 }
 
 export interface Config {

@@ -2,7 +2,7 @@
   "name": "wsb-plugins",
   "description": "Package json for installing wsb plugins",
   "dependencies": {
-    "@wsb-harpoon/10k-parser": "0.0.3",
-    "@wsb-harpoon/export-sheet": "0.0.3"
+    "@wsb-harpoon/10k-parser": "1.0.0",
+    "@wsb-harpoon/export-sheet": "1.0.0"
   }
 }

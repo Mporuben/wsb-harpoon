@@ -21,7 +21,11 @@ export const main = async () => {
 
 const action = async (shodExitAfterAction: boolean) => {
   const command = config.actionConfig['command'] || await consoleInput(chalk.yellow('Enter a command: '))
-  await execCommand(command)
+  const result = await execCommand(command)
+  if (result) {
+    console.log(result)
+  }
+
   config.actionConfig = {}
   if (!shodExitAfterAction) {
     action(false)

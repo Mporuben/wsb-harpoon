@@ -11,7 +11,6 @@ export const formatRawJSON = (json: any, multiplyNum = 1000000): NormalizedItem 
   )
 
 const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
-  console.log(item)
   const field: string | boolean = getFieldName(item)
   if(field === false) {
     return {}
@@ -27,7 +26,6 @@ const normalizeItem = (item: RawItem, multiplyNum: number): NormalizedItem  => {
         acc[date.getFullYear()] = { [field]: multiplyNum * (item[key] as number)}
       }
     }
-    console.log(acc)
     return acc
   }, {})
 }
